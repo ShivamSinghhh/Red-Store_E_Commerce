@@ -2,20 +2,24 @@
     margin :0;
     padding : 0 ;
     box-sizing: border-box;
+    
+}
+body{
+    font-family: 'Poppins', sans-serif;
 }
 
 .container{
-    max-width: 1300px;
+    max-width: 100%;
     margin: auto;
     padding-left: 20px;
     padding-right : 25px;
 }
-.navbar{
-    display: flex;
+.navbar{    
+    display: flex;  
     align-items: center;
-    padding : 20 px;
+    padding : 20 px;     
 }
-nav{
+nav{  
     flex : 1;
     text-align: right;
 }
@@ -27,9 +31,14 @@ nav ul li{
     display: inline-block;
     margin : 20px;
 }
-a{
+a{   
 text-decoration  : none;
 color: #555;
+}
+li a:hover{
+    transition: all 0.3s ease;
+    background-color: #F06292;
+    color: black;
 }
 P{
     color : #555;
@@ -56,13 +65,20 @@ P{
 }
 .btn{
     display: inline-block;
-    background-color: #ff523b;
+    background: #ff523b;
     color : #fff;
     margin-top: 8px;
     padding : 8px 30px;
-    border-radius: 10px;;
-
+    border-radius: 30px; 
+    transition : background 0.5s;
+}
+.btn:hover{   
+    background-color: #563434;
 }
 .header{
     background : radial-gradient(#fff,#ffd6d6);
+}
+.header .row{
+    margin-top : 70px;
+
 }
