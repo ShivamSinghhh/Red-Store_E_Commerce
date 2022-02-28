@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -78,8 +77,7 @@
                 <a href="" class="btn">Add To Cart</a>
                 <h3>Product Details <i class="fa fa-indent"></i></h3>
                 <br>
-                <p>Give your summer wardrobe a style upgrade with the HRX Men's Active T-shirt. Team it with a pair of
-                    shorts for your morning workout our a denims for an evening out with the guys.</p>
+                <p>Give your summer wardrobe a style upgrade with the HRX Men's Active T-shirt. Team it with a pair of shorts for your morning workout our a denims for an evening out with the guys.</p>
             </div>
         </div>
 
@@ -92,54 +90,54 @@
         </div>
 
         <div class="small-container">
-        <div class="row">
-            <div class="col-4">
-                <img src="./images/product-1.jpg">
-                <h4>Red Printed T-shirt</h4>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <p>₹ 50.00</p>
-            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="./images/product-1.jpg">
+                    <h4>Red Printed T-shirt</h4>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <p>₹ 50.00</p>
+                </div>
 
-            <div class="col-4">
-                <img src="./images/product-2.jpg">
-                <h4>Red Printed T-shirt</h4>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-                <p>₹ 50.00</p>
-            </div>
+                <div class="col-4">
+                    <img src="./images/product-2.jpg">
+                    <h4>Red Printed T-shirt</h4>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <p>₹ 50.00</p>
+                </div>
 
-            <div class="col-4">
-                <img src="./images/product-3.jpg">
-                <h4>Red Printed T-shirt</h4>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-o"></i>
-                <p>₹ 50.00</p>
-            </div>
+                <div class="col-4">
+                    <img src="./images/product-3.jpg">
+                    <h4>Red Printed T-shirt</h4>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                    <p>₹ 50.00</p>
+                </div>
 
-            <div class="col-4">
-                <img src="./images/product-4.jpg">
-                <h4>Red Printed T-shirt</h4>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <p>₹ 50.00</p>
+                <div class="col-4">
+                    <img src="./images/product-4.jpg">
+                    <h4>Red Printed T-shirt</h4>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <p>₹ 50.00</p>
+                </div>
+
             </div>
 
         </div>
-
-    </div>
 
 
     </div>
@@ -187,49 +185,41 @@
 
     </div>
 
-    <!-- //----------JS for toggle menu-------------// -->
-    <script>
-        var MenuItems = document.getElementById("MenuItems");
-        MenuItems.style.maxHeight = "0px";
-
-        function menutoggle() {
-            if (MenuItems.style.maxHeight === "0px") {
-                MenuItems.style.maxHeight = "200px";
-            }
-            else {
-                MenuItems.style.maxHeight = "0px";
-            }
-        }
-
-
-   //---------JS for Product Gallery---------//
-
-    let ProductImg = document.getElementById("ProductImg");
-    let SmallImg  = document.getElementsByClassName("small-img");   
-
- 
- // if it is html collection, then first spread it then use HOF.
- [...SmallImg].forEach(element => {
-        element.onclick = ()=>{
-        ProductImg.src = element.src; 
-     }
- });
-
- // other wise, we can use simple for-loop
-    //   for(let i = 0 ; i <SmallImg.length; i++){
-    //     SmallImg[i].onclick = function(){
-   //     ProductImg.src = SmallImg[i].src;
-   //   }  }
-  
-
- 
-
-
-
-
-
-    </script>
 
 </body>
 
 </html>
+
+<!-- //----------JS for toggle menu-------------// -->
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle() {
+        if (MenuItems.style.maxHeight === "0px") {
+            MenuItems.style.maxHeight = "200px";
+        } else {
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+
+
+    //---------JS for Product Gallery---------//
+
+    let ProductImg = document.getElementById("ProductImg");
+    let SmallImg = document.getElementsByClassName("small-img");
+
+
+    // if it is html collection, then first spread it then use HOF.
+    [...SmallImg].forEach(element => {
+        element.onclick = () => {
+            ProductImg.src = element.src;
+        }
+    });
+
+    // other wise, we can use simple for-loop
+    //   for(let i = 0 ; i <SmallImg.length; i++){
+    //     SmallImg[i].onclick = function(){
+    //     ProductImg.src = SmallImg[i].src;
+    //   }  }
+</script>
