@@ -12,12 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
 
     <div class="container">
-        <div class="navbar">
+        <!-- <div class="navbar">
             <div class="logo">
                 <a href="index.html"><img src="./images/logo.png" alt="logo" width="125px" /></a>
             </div>
@@ -27,12 +28,12 @@
                     <li><a href="product.html">Products</a></li>
                     <li><a href="">About</a></li>
                     <li><a href="">Contact</a></li>
-                    <li><a href="account.html">Account</a></li>
+                    <li ><a id="userAccount" href="account.html">Account</a></li>
                 </ul>
             </nav>
             <img src="./images/cart.png" width="30px" height="30px" alt="cart">
             <img src="./images/menu.png" class="menu-icon" onclick="menutoggle()">
-        </div>
+        </div> -->
     </div>
 
 
@@ -53,9 +54,9 @@
                         </div>
 
                         <form id="LoginForm">
-                            <input id="user2" type="text" placeholder="Username">
+                            <input id="email2" type="email" placeholder="Email">
                             <input id="pass2" type="password" placeholder="Password">
-                            <button onclick="signIn(event)" type="submit" class="btn">Login</button>
+                            <button id="btn2" type="submit" class="btn">Login</button>
                             <a href="">Forgot Password</a>
                         </form>
 
@@ -63,7 +64,7 @@
                             <input id="user1" type="text" placeholder="Username">
                             <input id="email1" type="email" placeholder="Email">
                             <input id="pass1" type="password" placeholder="Password">
-                            <button onclick="createUser(event)" type="submit" class="btn">Register</button>
+                            <button id="btn1" type="submit" class="btn">Register</button>
                         </form>
 
                     </div>
@@ -119,7 +120,6 @@
 
 </html>
 
-
 <script>
     //----------JS for toggle menu--------------//
     var MenuItems = document.getElementById("MenuItems");
@@ -139,29 +139,31 @@
     let RegForm = document.getElementById("RegForm");
     let Indicator = document.getElementById("Indicator");
 
-
     function registration() {
         RegForm.style.transform = "translateX(0px)";
         LoginForm.style.transform = "translateX(0px)";
         Indicator.style.transform = "translateX(100px)";
-   }
+    }
 
     function login() {
         RegForm.style.transform = "translateX(300px)";
         LoginForm.style.transform = "translateX(300px)";
         Indicator.style.transform = "translateX(0px)";
-    }
+    }   
 
-//--------user registration--------------------//
-function createUser(event){
-    event.preventDefault();
+</script>
 
-    let username = document.getElementById("user1").value;
-    let password = document.getElementById("pass1").value;
-    let email = document.getElementById("pass1").value;
+<script type="module">
 
-    console.log(username,email,password)
-}
+     //---------creating user-----------------//
+    import {createUser} from "./signUp.js";
+    let btn1 = document.getElementById("btn1");
+    btn1.addEventListener("click", createUser);
+    // if we import the function then, we can't write inline function inside HTML.
 
+     //---------user login------------------//
+    import {signIn} from "./signIn.js";
+    let btn2 = document.getElementById("btn2");
+    btn2.addEventListener("click",signIn);
 
 </script>

@@ -11,10 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    
+    
 </head>
 
 <body>
+    
 
     <div class="container">
         <div class="navbar">
@@ -27,7 +29,7 @@
                     <li><a href="product.html">Products</a></li>
                     <li><a href="">About</a></li>
                     <li><a href="">Contact</a></li>
-                    <li><a href="account.html">Account</a></li>
+                    <li ><a id="userAccount" href="account.html">Account</a></li>
                 </ul>
             </nav>
             <img src="./images/cart.png" width="30px" height="30px" alt="cart">
@@ -52,7 +54,7 @@
         <div class="row">
             <div class="col-4">
                <a href="productsDetails.html"> <img src="./images/product-1.jpg"></a>
-                <h4>Red Printed T-shirt</h4></a>
+                <h4>Red Printed T-shirt</h4>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -241,7 +243,8 @@
 
 
 <!-- //----------JS for toggle menu-------------// -->
-<script>
+
+ 
     var MenuItems = document.getElementById("MenuItems");
     MenuItems.style.maxHeight = "0px";
 
@@ -252,4 +255,8 @@
             MenuItems.style.maxHeight = "0px";
         }
     }
+
+  
+
 </script>
+

@@ -11,13 +11,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    
 </head>
 
 <body>
     <div class="header">
         <div class="container">
-            <div class="navbar">
+            <nav id="nav"></nav>
+            <!-- <div class="navbar">
                 <div class="logo">
                    <a href="index.html"><img src="./images/logo.png" alt="logo" width="125px" /></a>
                 </div>
@@ -27,12 +28,12 @@
                         <li><a href="product.html">Products</a></li>
                         <li><a href="">About</a></li>
                         <li><a href="">Contact</a></li>
-                        <li><a href="account.html">Account</a></li>
+                        <li ><a id="userAccount" href="account.html">Account</a></li>
                     </ul>
                 </nav>
                <a href="cart.html"><img src="./images/cart.png" width="30px" height="30px" alt="cart"></a>
                 <img src="./images/menu.png" class="menu-icon" onclick="menutoggle()">
-            </div>
+            </div> -->
 
             <div class="row">
                 <div class="col-2">
@@ -328,6 +329,11 @@
     </div>
 
     <!-- //----------JS for toggle menu-------------// -->
+    <script type="module">
+        import {navBar} from "./navbar.js";
+        document.getElementById("nav").innerHTML = navBar();
+    
+    </script>
 
 
 </body>
