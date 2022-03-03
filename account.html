@@ -18,22 +18,8 @@
 <body>
 
     <div class="container">
-        <!-- <div class="navbar">
-            <div class="logo">
-                <a href="index.html"><img src="./images/logo.png" alt="logo" width="125px" /></a>
-            </div>
-            <nav class="navbar-right">
-                <ul id="MenuItems">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="product.html">Products</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li ><a id="userAccount" href="account.html">Account</a></li>
-                </ul>
-            </nav>
-            <img src="./images/cart.png" width="30px" height="30px" alt="cart">
-            <img src="./images/menu.png" class="menu-icon" onclick="menutoggle()">
-        </div> -->
+      <nav></nav>
+      <!-- importing navbar -->
     </div>
 
 
@@ -120,7 +106,22 @@
 
 </html>
 
-<script>
+<script type="module">
+
+import {createUser} from "./signUp.js";
+    let btn1 = document.getElementById("btn1");
+    btn1.addEventListener("click", createUser);
+    // if we import the function then, we can't write inline function inside HTML.
+
+     //---------user login------------------//
+    import {signIn} from "./signIn.js";
+    let btn2 = document.getElementById("btn2");
+    btn2.addEventListener("click",signIn);
+
+    import {navBar} from "./navbar.js";
+    document.querySelector("nav").innerHTML = navBar();
+
+
     //----------JS for toggle menu--------------//
     var MenuItems = document.getElementById("MenuItems");
     MenuItems.style.maxHeight = "0px ";
@@ -132,6 +133,13 @@
             MenuItems.style.maxHeight = "0px";
         }
     }
+
+
+   
+
+</script>
+
+<script>  
 
     //---------JS for toggle form----------//
 
@@ -153,17 +161,5 @@
 
 </script>
 
-<script type="module">
 
-     //---------creating user-----------------//
-    import {createUser} from "./signUp.js";
-    let btn1 = document.getElementById("btn1");
-    btn1.addEventListener("click", createUser);
-    // if we import the function then, we can't write inline function inside HTML.
 
-     //---------user login------------------//
-    import {signIn} from "./signIn.js";
-    let btn2 = document.getElementById("btn2");
-    btn2.addEventListener("click",signIn);
-
-</script>
