@@ -24,9 +24,15 @@ export function signIn(event) {
         if (ele.email === username) {
             if (ele.password === password) {
                 flag = false;
-                let accountName = document.getElementById("userAccount");
-                accountName.innerText = ele.username;
-                console.log(accountName)
+                // let accountName = document.getElementById("userAccount");
+                 localStorage.setItem("loginData",JSON.stringify([ele.username]))
+                // let data  =  localStorage.getItem("loginData");
+                // if(data.length){
+                //     console.log(accountName)
+                //     accountName.innerText = ele.username;
+                // }
+                
+               // console.log(accountName)
                 window.alert("logged in successfully")
                 window.location.href = "./index.html";              
                 return;
