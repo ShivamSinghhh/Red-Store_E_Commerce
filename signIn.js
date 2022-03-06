@@ -16,23 +16,15 @@ export function signIn(event) {
         return;
     }
 
-    //------- check if user already exist---------//    
-   
+    //------- check if user already exist---------//     
 
     let flag = true;
     userDetails.forEach(function check(ele) {
         if (ele.email === username) {
             if (ele.password === password) {
-                flag = false;
-                // let accountName = document.getElementById("userAccount");
+                 flag = false;               
                  localStorage.setItem("loginData",JSON.stringify([ele.username]))
-                // let data  =  localStorage.getItem("loginData");
-                // if(data.length){
-                //     console.log(accountName)
-                //     accountName.innerText = ele.username;
-                // }
-                
-               // console.log(accountName)
+             
                 window.alert("logged in successfully")
                 window.location.href = "./index.html";              
                 return;
@@ -40,7 +32,7 @@ export function signIn(event) {
             window.alert("Invalid Input")
         }
     });
-
+   //----if user doesn't exist in our database------//
     if (flag) {
         window.alert("Register yourself");
         registration();
