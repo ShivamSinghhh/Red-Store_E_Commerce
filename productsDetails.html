@@ -26,46 +26,31 @@
     <!-- ---------single product details----------- -->
 
     <div class="small-container single-product">
-        <div class="row">
-            <div class="col-2">
-                <img src="./images/gallery-1.jpg" alt="" width="100%" id="ProductImg">
-
-                <div class="small-img-row">
-                    <div class="small-img-col">
-                        <img src="./images/gallery-1.jpg" alt="" width="100%" class="small-img">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="./images/gallery-2.jpg" alt="" width="100%" class="small-img">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="./images/gallery-3.jpg" alt="" width="100%" class="small-img">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="./images/gallery-4.jpg" alt="" width="100%" class="small-img">
-                    </div>
-                </div>
-
-
+        <div id="detailsContainer" class="row">
+            <div id="imgDiv" class="col-2">
+                <img src="" alt="img" width="100%" id="ProductImg">
             </div>
 
-            <div class="col-2">
-                <p>Home / T-Shirt</p>
-                <h1>Red Printed T-Shirt by HRX</h1>
-                <h4>₹ 50.00</h4>
-                <select>
+            <div id="discription" class="col-2">
+
+                <!-- <h1>Red Printed T-Shirt by HRX</h1> -->
+                <!-- <h4>₹ 50.00</h4> -->
+                <!-- <select>
                     <option>Select Size</option>
                     <option>XXL</option>
                     <option>XL</option>
                     <option>Large</option>
                     <option>Medium</option>
                     <option>Small</option>
-                </select>
-                <input type="number" value="1">
-                <a href="" class="btn">Add To Cart</a>
-                <h3>Product Details <i class="fa fa-indent"></i></h3>
+                </select> -->
+                <!-- <input type="number" value="1"> -->
+                <!-- <a href="" class="btn">Add To Cart</a> -->
+                <!-- <h3>Product Details <i class="fa fa-indent"></i></h3>
                 <br>
                 <p>Give your summer wardrobe a style upgrade with the HRX Men's Active T-shirt. Team it with a pair of
-                    shorts for your morning workout our a denims for an evening out with the guys.</p>
+                    shorts for your morning workout our a denims for an evening out with the guys.</p> -->
+
+
             </div>
         </div>
 
@@ -78,51 +63,8 @@
         </div>
 
         <div class="small-container">
-            <div class="row">
-                <div class="col-4">
-                    <img src="./images/product-1.jpg">
-                    <h4>Red Printed T-shirt</h4>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <p>₹ 50.00</p>
-                </div>
-
-                <div class="col-4">
-                    <img src="./images/product-2.jpg">
-                    <h4>Red Printed T-shirt</h4>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                    <p>₹ 50.00</p>
-                </div>
-
-                <div class="col-4">
-                    <img src="./images/product-3.jpg">
-                    <h4>Red Printed T-shirt</h4>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-o"></i>
-                    <p>₹ 50.00</p>
-                </div>
-
-                <div class="col-4">
-                    <img src="./images/product-4.jpg">
-                    <h4>Red Printed T-shirt</h4>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <p>₹ 50.00</p>
-                </div>
-
+            <div id="related" class="row">               
+                     <!-- importing related products from js -->
             </div>
 
         </div>
@@ -139,7 +81,7 @@
 </html>
 
 <script type="module">
-    import { navBar, accountName, menuToggle,cartLogo } from "./navbar.js";
+    import { navBar, accountName, menuToggle, cartLogo } from "./navbar.js";
     document.querySelector("nav").innerHTML = navBar();
 
     accountName();
@@ -151,8 +93,7 @@
     document.getElementById("menutoggle").addEventListener("click", menuToggle)
 
     //----------cart logo-----------//
-    document.getElementById("cartLogo").addEventListener("click",cartLogo)
-
+    document.getElementById("cartLogo").addEventListener("click", cartLogo)
 
 
 </script>
@@ -178,4 +119,129 @@
     //     SmallImg[i].onclick = function(){
     //     ProductImg.src = SmallImg[i].src;
     //   }  }
+
+
+    function appendData() {
+        let item = JSON.parse(localStorage.getItem("discriptionData"));
+
+        let img = document.getElementById("ProductImg");
+        img.src = item.img;
+
+        let discription = document.getElementById("discription");
+        let h1 = document.createElement("h1");
+        h1.innerText = item.name
+        let h4 = document.createElement("h4");
+        h4.innerText = item.price
+        discription.append(h1, h4)
+
+        let select = document.createElement("select");
+
+        let option1 = document.createElement("option");
+        option1.innerText = "Select Size";
+        let option2 = document.createElement("option");
+        option2.innerText = "XXL"
+        let option3 = document.createElement("option");
+        option3.innerText = "XL"
+        let option4 = document.createElement("option");
+        option4.innerText = "Large"
+        let option5 = document.createElement("option");
+        option5.innerText = "Medium"
+        let option6 = document.createElement("option");
+        option6.innerText = "Small"
+
+        select.append(option1, option2, option3, option4, option5, option6)
+
+        discription.append(select);
+
+        let input = document.createElement("input");
+        input.setAttribute("type", "number")
+        input.setAttribute("value", "1")
+        discription.append(input);
+
+        let a = document.createElement("a");
+        a.className = "btn";
+        a.innerText = "Add To Cart";
+        discription.append(a)
+
+        let h3 = document.createElement("h3");
+
+        h3.innerHTML = `Product Details<i class="fa fa-indent"></i>`
+        let br = document.createElement("br");
+        discription.append(h3, br)
+        let p = document.createElement("p");
+        p.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque repudiandae vitae dolore reiciendis, sint rem sequi sapiente nulla laborum laboriosam. Nam, nesciunt! Totam labore aspernatur exercitationem nemo illo, odit magni!";
+
+        discription.append(p)
+
+    }
+
+    appendData();
+
+</script>
+
+<!-- //-------related data----------------// -->
+
+<script type="module">
+    //-----importing data from dataBase------//
+    import productsData from "./db.js";
+    console.log(productsData)
+
+
+    function relatedData() {
+
+        let main_div = document.getElementById("related");
+
+        for (let i = 0; i < 4; i++) {
+            let ele = Math.floor(Math.random() * productsData.length);           
+            let div = document.createElement("div");
+            div.className = "col-4";
+            let img = document.createElement("img");
+            img.src = productsData[ele].img;
+            let h4 = document.createElement("h4");
+            h4.innerText = productsData[ele].name;
+
+            div.append(img, h4)
+
+            //-----checking for all ratings-------//
+               let rating = +productsData[ele].rating;
+
+            for (let j = 1; j <= 5; j++) {
+                if (rating >= 1) {
+                    let ispan = document.createElement("i");
+                    ispan.className = "fa fa-star";
+                    div.append(ispan);
+                }
+                else if (rating > 0 && rating < 1) {
+                    let ispan = document.createElement("i");
+                    ispan.className = "fa fa-star-half-o";
+                    div.append(ispan);
+                }
+                else {
+                    let ispan = document.createElement("i");
+                    ispan.className = "fa fa-star-o";
+                    div.append(ispan);
+                }
+               rating--;
+            }
+
+
+            let p = document.createElement("p");
+            p.innerText = productsData[ele].price;
+            div.append(p);
+
+            div.addEventListener("click", () => {
+                localStorage.setItem("discriptionData", JSON.stringify(productsData[ele]));
+                let discription = document.getElementById("discription").innerHTML = "";
+                appendData();
+                let main_div = document.getElementById("related").innerHTML = "";
+                relatedData();              
+
+            })
+
+            main_div.append(div);
+        }
+
+    }
+
+    relatedData()
 </script>
