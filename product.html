@@ -132,13 +132,10 @@
             p.innerText = ele.price;
             div.append(p);
 
-            div.addEventListener("click", () => {
-                let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
-                cartData.push(ele)
-                localStorage.setItem("cartData", JSON.stringify(cartData))
+            div.addEventListener("click", () => {              
+                localStorage.setItem("discriptionData", JSON.stringify(ele))
             })
-
-            console.log(div)
+           
             main_div.append(div)
 
         })

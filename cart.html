@@ -25,13 +25,14 @@
     </div>
 
     <div class="small-container cart-page">
-        <table>
+        <table id="item">
             <tr>
                 <th>Products</th>
                 <th>Quantity</th>
                 <th>Subtotal</th>
             </tr>
-            <tr>
+
+            <!-- <tr>
                 <td>
                     <div class="cart-info">
                         <img src="images/buy-1.jpg">
@@ -46,41 +47,11 @@
 
                 <td><input type="number" value="1"></td>
                 <td>₹ 50.oo</td>
-            </tr>
+            </tr> -->
 
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="images/buy-2.jpg">
-                        <div>
-                            <p>Red Printed Tshirt</p>
-                            <small>Price :₹ 75.00</small>
-                            <br>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
+          
 
-                <td><input type="number" value="1"></td>
-                <td>₹ 75.oo</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="images/buy-3.jpg">
-                        <div>
-                            <p>Red Printed Tshirt</p>
-                            <small>Price :₹ 60.00</small>
-                            <br>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-
-                <td><input type="number" value="1"></td>
-                <td>₹ 60.oo</td>
-            </tr>
+        
         </table>
 
 
@@ -88,15 +59,15 @@
             <table>
                 <tr>
                     <td>Subtotal</td>
-                    <td>₹ 185.00</td>
+                    <td id="subTotal">₹ 185.00</td>
                 </tr>
                 <tr>
                     <td>Tax</td>
-                    <td>₹ 45.00</td>
+                    <td id="tax">₹ 45.00</td>
                 </tr>
                 <tr>
                     <td>Total</td>
-                    <td>₹ 230.00</td>
+                    <td id="total">₹ 230.00</td>
                 </tr>
             </table>
 
@@ -126,5 +97,75 @@
 
     //----------cart logo-----------//
     document.getElementById("cartLogo").addEventListener("click",cartLogo)
+
+
+
+</script>
+
+<script>
+    /*
+    <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="images/buy-1.jpg">
+                        <div>
+                            <p>Red Printed Tshirt</p>
+                            <small>Price :₹ 50.00</small>
+                            <br>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+
+                <td><input type="number" value="1"></td>
+                <td>₹ 50.oo</td>
+            </tr>
+*/
+   function appendData(){
+  
+    let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+
+    cartData.map((ele)=>{
+        let tr = document.createElement("tr");
+       let td = document.createElement("td");
+       let div1 = document.createElement('div');
+       div1.style.className = "cart-info";
+       let img = document.createElement("img");
+       img.src = ele.img
+
+       let div2 = document.createElement('div');
+       let p = document.createElement("p");
+       p.innerText = ele.name;
+       let small = document.createElement("small");
+       small.innerText = ele.price;
+       let br = document.createElement("br");
+       let a = document.createElement("a");
+       a.href= "";
+       a.innerText = "Remove";
+       a.addEventListener("click",()=>{
+          cartData = cartData.filter((ele,index)=>{
+               return ele !== index
+           })
+           localStorage.setItem("cartData",JSON.stringify(cartData));
+           //---may be i need to invoke append function here again.
+       })
+
+       div2.append(p,small,br,a);
+       div1.append(img,div2);
+       td.append(div1);
+       tr.append(td);
+
+       let table = document.getElementById("item")
+       table.append(tr);
+
+
+    })
+       
+
+   }
+
+   appendData()
+
+ 
 
 </script>

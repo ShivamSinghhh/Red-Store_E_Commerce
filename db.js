@@ -24,7 +24,7 @@ let productsData = [
         "id": "4",
         "name": "Puma Blue T-shirt",
         "img": "./images/product-4.jpg",
-        "price": "₹ 50.00",
+        "price": "₹ 1350.00",
         "rating": "4.0"
     },
     {

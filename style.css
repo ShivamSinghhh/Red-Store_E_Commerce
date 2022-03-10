@@ -390,10 +390,10 @@
         margin-left: 10px;
     }
     
-    .small-img-row {
+    /* .small-img-row {
         display: flex;
         justify-content: space-between;
-    }
+    } */
     
     .small-img-col {
         flex-basis: 24%;
@@ -558,7 +558,7 @@
         }
         .menu-icon {
             display: block;
-            cursor: pointer;
+            cursor: pointer;            
         }
       
     }
